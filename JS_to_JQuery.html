@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What can Jquery do?</title>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+<h1>What can Jquery do?</h1>
+
+<hr>
+
+<h1>Jquery can hide/show HTML elements</h1>
+<button onclick="hide_all()">Hide All</button>
+<button onclick="shown()">Show All</button>
+
+<p id="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h1 id="content">Jquery can change html content</h1>
+<button onclick="content()">Change Content</button>
+
+<h1>Jquery can change html attribute</h1>
+<button onclick="height()">Change Height</button>
+<button onclick="changephoto()">Change Image</button>
+
+<img src="dogs.jpg" id="dogs" height="100">
+
+<h1 id="changecolor">Jquery can change html atyles</h1>
+<button onclick="color()">Change Style</button><br>
+
+<p class="fade">qwerty</p>
+<p class="fade">asdfg</p>
+<p class="fade">zxcvb</p>
+
+<button id="fadeshow" onclick="fadeshow()" style="display: none;">Fade In</button><br>
+
+<button id='upslide' onclick="upslide()">Slide Up</button>
+<button id='downslide' onclick="downslide()">Slide Down</button><br>
+<img src="dogs.jpg" id="dogs2" height="200">
+
+
+
+<script type="text/javascript">
+	function upslide(){
+		$('#dogs2').slideUp()
+		$('#upslide').hide()
+		$('#downslide').show()
+	}
+	function downslide(){
+		$('#dogs2').slideDown()
+		$('#downslide').hide()
+		$('#upslide').show()
+	}
+
+	
+	$('p.fade').click( function(){
+		$(this).fadeOut()
+		$('#fadeshow').show()
+	})
+	function fadeshow(){
+		$('p').fadeIn()
+		$('#fadeshow').hide()
+	}
+
+
+	function hide_all(){
+		$('#test').hide()
+	}
+	function shown(){
+		$('#test').show()
+	}
+	function content(){
+		$('#content').html("Hello World")
+	}
+	function height(){
+		$('#dogs').attr("height",30)
+	}
+	function changephoto(){
+		$('#dogs').attr("src","logo.png")
+	}
+	function color(){
+		$('#changecolor').css("color","blue")
+	}
+	function color(){
+		$('#changecolor').css("color","blue")
+	}
+	$('#changecolor').hover(
+		function() {
+			$('#changecolor').css("color","yellow")
+		}
+	)
+	$('#changecolor').mouseleave(
+		function() {
+			$('#changecolor').css("color","blue")
+		}
+	)
+</script>
+
+
+</body>
+</html>

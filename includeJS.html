@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Include Javasript</title>
+</head>
+<body>
+
+<h1 id='heading'>This is a heading</h1>
+
+<script type="text/javascript">
+	document.getElementById('heading').innerHTML = "new value";
+	document.getElementById('heading').style.color = "blue";
+
+</script>
+
+<button onclick="alert('This is inline')">
+	Inline
+</button>
+
+<button onclick="internal_function()">
+	Internal
+</button>
+
+<button onclick="external_function()">
+	External
+</button>
+
+<script type="text/javascript">
+	function internal_function(){
+		alert('This is Internal');
+	}
+</script>
+
+<script type="text/javascript" src="external.js"></script>
+
+</body>
+</html>
